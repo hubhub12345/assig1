@@ -1,0 +1,58 @@
+class Payment:
+   """Class to represent a payment method."""
+
+
+   # Constructor
+   def __init__(self, cardtype="", balance=0.0, currency="", accountholder=""):
+       self.__cardtype = cardtype
+       self.__balance = balance
+       self.__currency = currency
+       self.__accountholder = accountholder
+
+
+   # Setter & Getter for cardtype
+   def get_cardtype(self):
+       return self.__cardtype
+
+
+   def set_cardtype(self, cardtype):
+       self.__cardtype = cardtype
+
+
+   # Setter & Getter for balance
+   def get_balance(self):
+       return self.__balance
+
+
+   def set_balance(self, balance):
+       self.__balance = balance
+
+
+   # Setter & Getter for currency
+   def get_currency(self):
+       return self.__currency
+
+
+   def set_currency(self, currency):
+       self.__currency = currency
+
+
+   # Setter & Getter for accountholder
+   def get_accountholder(self):
+       return self.__accountholder
+
+
+   def set_accountholder(self, accountholder):
+       self.__accountholder = accountholder
+
+
+   # Display function
+   def __str__(self):
+       return f"Card Type: {self.__cardtype}, Balance: {self.__balance}, Currency: {self.__currency}, Account Holder: {self.__accountholder}"
+
+
+
+
+# Creating an Object
+payment1 = Payment("Visa", 2500.0, "USD", "John Doe")
+print(payment1)
