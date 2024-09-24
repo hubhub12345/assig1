@@ -1,0 +1,66 @@
+from datetime import date
+
+
+
+
+class Request:
+   """Class to represent a request related to a reservation."""
+
+
+   # Constructor
+   def __init__(self, request_details="", reservation_id=0, request_id=0, request_date=None):
+       self.__request_details = request_details
+       self.__reservation_id = reservation_id
+       self.__request_id = request_id
+       self.__request_date = request_date if request_date is not None else date.today()
+
+
+   # Setter & Getter for requestDetails
+   def get_request_details(self):
+       return self.__request_details
+
+
+   def set_request_details(self, request_details):
+       self.__request_details = request_details
+
+
+   # Setter & Getter for reservationID
+   def get_reservation_id(self):
+       return self.__reservation_id
+
+
+   def set_reservation_id(self, reservation_id):
+       self.__reservation_id = reservation_id
+
+
+   # Setter & Getter for requestID
+   def get_request_id(self):
+       return self.__request_id
+
+
+   def set_request_id(self, request_id):
+       self.__request_id = request_id
+
+
+   # Setter & Getter for requestDate
+   def get_request_date(self):
+       return self.__request_date
+
+
+   def set_request_date(self, request_date):
+       self.__request_date = request_date
+
+
+   # Display function
+   def __str__(self):
+       return (f"Request ID: {self.__request_id}, "
+               f"Reservation ID: {self.__reservation_id}, "
+               f"Request Details: {self.__request_details}, "
+               f"Request Date: {self.__request_date}")
+
+
+
+
+# Creating an Object
+request1 = Request("Change reservation date", 101, 1001, date(2024, 9, 24))
+print(request1)
