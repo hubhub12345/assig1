@@ -1,0 +1,65 @@
+from datetime import date
+
+
+
+
+class Reservation:
+   """Class to represent a reservation."""
+
+
+   # Constructor
+   def __init__(self, reservation_date=None, reservation_availability="", status="", total_amount=0.0):
+       self.__reservation_date = reservation_date if reservation_date is not None else date.today()
+       self.__reservation_availability = reservation_availability
+       self.__status = status
+       self.__total_amount = total_amount
+
+
+   # Setter & Getter for reservationDate
+   def get_reservation_date(self):
+       return self.__reservation_date
+
+
+   def set_reservation_date(self, reservation_date):
+       self.__reservation_date = reservation_date
+
+
+   # Setter & Getter for reservationAvailability
+   def get_reservation_availability(self):
+       return self.__reservation_availability
+
+
+   def set_reservation_availability(self, reservation_availability):
+       self.__reservation_availability = reservation_availability
+
+
+   # Setter & Getter for status
+   def get_status(self):
+       return self.__status
+
+
+   def set_status(self, status):
+       self.__status = status
+
+
+   # Setter & Getter for totalAmount
+   def get_total_amount(self):
+       return self.__total_amount
+
+
+   def set_total_amount(self, total_amount):
+       self.__total_amount = total_amount
+
+
+   # Display function
+   def __str__(self):
+       return (f"Reservation Date: {self.__reservation_date}, "
+               f"Availability: {self.__reservation_availability}, "
+               f"Status: {self.__status}, Total Amount: {self.__total_amount:.2f}")
+
+
+
+
+# Creating an Object
+reservation1 = Reservation(date(2024, 10, 5), "Available", "Confirmed", 150.75)
+print(reservation1)
