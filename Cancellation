@@ -1,0 +1,75 @@
+from datetime import date
+
+
+
+
+class Cancellation:
+   """Class to represent a reservation cancellation."""
+
+
+   # Constructor
+   def __init__(self, reservation_id=0, user_id=0, reservation_date=None, status="", cancellation_date=None):
+       self.__reservation_id = reservation_id
+       self.__user_id = user_id
+       self.__reservation_date = reservation_date if reservation_date is not None else date.today()
+       self.__status = status
+       self.__cancellation_date = cancellation_date if cancellation_date is not None else date.today()
+
+
+   # Setter & Getter for reservationID
+   def get_reservation_id(self):
+       return self.__reservation_id
+
+
+   def set_reservation_id(self, reservation_id):
+       self.__reservation_id = reservation_id
+
+
+   # Setter & Getter for userID
+   def get_user_id(self):
+       return self.__user_id
+
+
+   def set_user_id(self, user_id):
+       self.__user_id = user_id
+
+
+   # Setter & Getter for reservationDate
+   def get_reservation_date(self):
+       return self.__reservation_date
+
+
+   def set_reservation_date(self, reservation_date):
+       self.__reservation_date = reservation_date
+
+
+   # Setter & Getter for status
+   def get_status(self):
+       return self.__status
+
+
+   def set_status(self, status):
+       self.__status = status
+
+
+   # Setter & Getter for cancellationDate
+   def get_cancellation_date(self):
+       return self.__cancellation_date
+
+
+   def set_cancellation_date(self, cancellation_date):
+       self.__cancellation_date = cancellation_date
+
+
+   # Display function
+   def __str__(self):
+       return (f"Reservation ID: {self.__reservation_id}, User ID: {self.__user_id}, "
+               f"Reservation Date: {self.__reservation_date}, Status: {self.__status}, "
+               f"Cancellation Date: {self.__cancellation_date}")
+
+
+
+
+# Creating an Object
+cancellation1 = Cancellation(101, 202, date(2024, 9, 15), "Cancelled", date(2024, 9, 20))
+print(cancellation1)
